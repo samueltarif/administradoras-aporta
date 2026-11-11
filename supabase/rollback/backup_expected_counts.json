@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-11-05T12:30:00-03:00",
+  "note": "Contagens (sem conteúdo) lidas via MCP antes do backup. 'stable' exige >= ao esperado; 'volatile' só presença.",
+  "tables": {
+    "auth.users": { "count": 10, "kind": "stable" },
+    "auth.identities": { "count": 10, "kind": "stable" },
+    "auth.sessions": { "count": 9, "kind": "volatile" },
+    "auth.refresh_tokens": { "count": 58, "kind": "volatile" },
+    "public.admin_users": { "count": 5, "kind": "stable" },
+    "public.admin_user_audit": { "count": 27, "kind": "stable" },
+    "public.admin_invite_reservations": { "count": 15, "kind": "stable" },
+    "public.admin_idempotency_keys": { "count": 5, "kind": "volatile" },
+    "public.admin_action_leases": { "count": 1, "kind": "volatile" },
+    "public.admin_rate_limits": { "count": 1, "kind": "volatile" },
+    "public.leads": { "count": 2, "kind": "stable" },
+    "public.lead_notes": { "count": 3, "kind": "stable" },
+    "public.lead_status_history": { "count": 7, "kind": "stable" },
+    "public.services": { "count": 7, "kind": "stable" },
+    "public.service_publications": { "count": 21, "kind": "stable" },
+    "public.service_media": { "count": 26, "kind": "stable" },
+    "public.hero_slides": { "count": 10, "kind": "stable" },
+    "public.upload_intents": { "count": 64, "kind": "volatile" }
+  },
+  "schema_must_contain": [
+    "admin_users", "leads", "services", "service_media", "hero_slides",
+    "customers", "management_companies", "tickets", "user_profiles"
+  ]
+}

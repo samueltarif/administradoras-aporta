@@ -1,0 +1,46 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Pacote de migração / dados sensíveis
+_pacote/
+*.bak
+*.bak-pre-config
+*.csv
+**/private_export/
+**/*.local.env
+__pycache__/
+
+# Backups locais do banco (contêm dados pessoais)
+backups/
+
+# Playwright
+playwright-report/
+test-results/
+.playwright-mcp/
+
+# Archives
+*.zip
+*.tar.gz
+*.7z
