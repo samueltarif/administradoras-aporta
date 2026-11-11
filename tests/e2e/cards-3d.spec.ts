@@ -66,10 +66,10 @@ test.describe('clientes: tabela e cards (proprietário)', () => {
 
     await page.goto('/admin/clientes?view=cards&q=Aurora')
     await page.getByRole('link', { name: 'Abrir cadastro: Condomínio Aurora (Demo)' }).click()
-    await expect(page.getByRole('heading', { name: 'Visualização 3D do condomínio' })).toBeVisible()
-    await page.getByRole('button', { name: 'Ver em 3D' }).click()
-    await expect(page.getByRole('button', { name: 'Reiniciar visualização' })).toBeVisible({ timeout: 15_000 })
-    await page.getByRole('button', { name: 'Reiniciar visualização' }).click()
+    await expect(page.getByRole('heading', { name: 'Dados cadastrais' })).toBeVisible()
+    // O cadastro não exibe modelo 3D (decisão do cliente em 11/11).
+    await expect(page.getByRole('heading', { name: 'Visualização 3D do condomínio' })).toHaveCount(0)
+    await expect(page.locator('canvas')).toHaveCount(0)
 
     await page.goto('/admin/clientes?view=cards&q=Centro')
     await page.getByRole('link', { name: /Abrir cadastro: Centro Logístico/ }).click()

@@ -28,6 +28,9 @@ _pacote/
 *.bak
 *.bak-pre-config
 *.csv
+*.xlsx
+*.xls
+Claude outputs/
 **/private_export/
 **/*.local.env
 __pycache__/
@@ -44,3 +47,6 @@ test-results/
 *.zip
 *.tar.gz
 *.7z
+
+# dados reais temporários da importação (nunca versionar)
+public/_importacao_tmp/

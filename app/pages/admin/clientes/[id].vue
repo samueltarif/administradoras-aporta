@@ -2,7 +2,6 @@
 import { customerSchema } from '#shared/schemas/registry'
 import AssignmentEditor from '~/components/admin/AssignmentEditor.vue'
 import RegistryFields from '~/components/admin/RegistryFields.vue'
-import CondoViewer from '~/components/viewer/CondoViewer.vue'
 
 definePageMeta({ layout: 'admin', middleware: ['staff'] })
 
@@ -94,23 +93,6 @@ async function save() {
           </Card>
         </div>
       </div>
-      <!-- Somente condomínios recebem a representação de edifícios (decisão de UX). -->
-      <Card v-if="data.customer.customer_kind === 'condominium'" class="mt-6">
-        <CardHeader>
-          <CardTitle>Visualização 3D do condomínio</CardTitle>
-          <CardDescription>Representação ilustrativa e genérica — não reproduz o imóvel real. Carregada sob demanda.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div class="aspect-[16/9] max-h-[460px] w-full overflow-hidden rounded-xl bg-gradient-to-b from-slate-50 to-slate-200 ring-1 ring-border">
-            <ClientOnly>
-              <CondoViewer load-on="click" show-reset />
-              <template #fallback>
-                <img src="/animation/condominio_3d_poster.webp" alt="" width="960" height="640" class="size-full object-contain">
-              </template>
-            </ClientOnly>
-          </div>
-        </CardContent>
-      </Card>
     </template>
   </div>
 </template>
