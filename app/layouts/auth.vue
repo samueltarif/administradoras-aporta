@@ -4,7 +4,7 @@ import CondoViewer from '~/components/viewer/CondoViewer.vue'
 
 <template>
   <div class="grid min-h-dvh lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
-    <!-- Desktop: identidade + modelo 3D (carrega no tempo ocioso, sem disputar com o formulário) -->
+    <!-- Desktop: identidade + imagem do condomínio; o 3D só carrega se a pessoa clicar (evita travar o login) -->
     <aside class="relative hidden overflow-hidden bg-brand-blue text-white lg:flex lg:flex-col">
       <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(255,255,255,0.16),transparent_62%)]" />
       <div class="relative z-10 p-10">
@@ -12,7 +12,7 @@ import CondoViewer from '~/components/viewer/CondoViewer.vue'
       </div>
       <div class="relative z-10 mx-auto aspect-[3/2] w-full max-w-[720px] flex-1 px-6" style="max-height: 62vh">
         <ClientOnly>
-          <CondoViewer load-on="idle" auto-rotate tone="dark" />
+          <CondoViewer load-on="click" auto-rotate tone="dark" />
           <template #fallback>
             <img src="/animation/condominio_3d_poster.webp" alt="" width="960" height="640" class="size-full object-contain">
           </template>
